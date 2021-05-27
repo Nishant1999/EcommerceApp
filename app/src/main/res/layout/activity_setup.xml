@@ -15,7 +15,7 @@
         android:layout_height="100dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="60dp"
-        android:src="@drawable/applogo"
+        android:src="@drawable/app_logo"
         />
 
     <TextView
