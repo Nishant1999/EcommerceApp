@@ -114,7 +114,7 @@ public class RegisterActivity extends AppCompatActivity {
             public void onComplete(Task<AuthResult> task) {
                 if(task.isSuccessful()){
                     String userId = firebaseAuth.getUid();
-                    User user = new User(userId,userName,name,email,password);
+                    User user = new User(userId,userName,name,email,password,"","");
                     saveUserDetailsFirestore(user);
                 }
                 else{

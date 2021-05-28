@@ -7,13 +7,17 @@ public class User {
     private String name;
     private String email;
     private String password;
+    private String userBio;
+    private String imageUrl;
 
-    public User(String userId, String userName, String name, String email, String password) {
+    public User(String userId, String userName, String name, String email, String password, String userBio, String imageUrl) {
         this.userId = userId;
         this.userName = userName;
         this.name = name;
         this.email = email;
         this.password = password;
+        this.userBio = userBio;
+        this.imageUrl = imageUrl;
     }
 
     public String getUserId() {
@@ -54,5 +58,21 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getUserBio() {
+        return userBio;
+    }
+
+    public void setUserBio(String userBio) {
+        this.userBio = userBio;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }
