@@ -10,8 +10,4 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimary</item>
         <!-- Customize your theme here. -->
     </style>
-    <style name="RegisterBTN" parent="TextAppearance.AppCompat.Widget.Button">
-
-        <item name="android:background">@drawable/input_design</item>
-    </style>
 </resources>

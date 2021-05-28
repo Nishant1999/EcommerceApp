@@ -1,69 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/welcome"
-    tools:context=".MainActivity">
-
+    android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/app_logo"
-        android:layout_width="300dp"
+        android:id="@+id/activity_setup_icon_iv"
+        android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="60dp"
-        android:src="@drawable/app_logo"
-        />
+        android:layout_centerInParent="true"
+        android:src="@drawable/icon" />
 
-    <TextView
-        android:id="@+id/app_slogan"
-        android:layout_width="248dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/app_logo"
-        android:layout_centerHorizontal="true"
-        android:text="@string/find_buy_anything_title"
-        android:gravity="center_horizontal"
-        android:textColor="@color/colorPrimary"
-        android:textSize="25sp"
-        android:textStyle="italic"
-        />
-
-
-    <Button
-        android:id="@+id/activity_setup_login_btn"
+    <LinearLayout
+        android:id="@+id/activity_setup_linear_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:background="@drawable/buttons"
-        android:padding="15dp"
-        android:textAllCaps="false"
-        android:textSize="15sp"
-        android:text="@string/already_have_an_account_login"
-        android:textColor="@android:color/white"
-        />
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:padding="10dp">
 
-    <Button
-        android:id="@+id/activity_setup_register_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/activity_setup_login_btn"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:background="@drawable/input_design"
-        android:padding="15dp"
-        android:textAllCaps="false"
-        android:textSize="15sp"
-        app:backgroundTint="@null"
-        android:text="@string/register"
-        android:textColor="@android:color/white"
-        />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:src="@drawable/logo" />
 
+        <Button
+            android:id="@+id/activity_setup_login_btn"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/button_background"
+            android:text="@string/log_in"
+            android:textAllCaps="false"
+            android:textColor="@color/colorBlack"
+            app:backgroundTint="@null" />
+
+        <androidx.legacy.widget.Space
+            android:layout_width="0dp"
+            android:layout_height="10dp" />
+
+        <Button
+            android:id="@+id/activity_setup_register_btn"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/button_background"
+            android:text="@string/register"
+            android:textAllCaps="false"
+            android:textColor="@color/colorBlack"
+            app:backgroundTint="@null" />
+
+    </LinearLayout>
 
 </RelativeLayout>

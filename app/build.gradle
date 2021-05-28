@@ -14,8 +14,8 @@ android {
         versionCode 1
         versionName "1.0"
 
-       /* Enabling multidex
-        multiDexEnabled true*/
+        //Enabling multidex
+        multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -47,5 +47,8 @@ dependencies {
     //Firebase
     implementation platform('com.google.firebase:firebase-bom:28.0.1')
     implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-core:19.0.0'
+    implementation 'com.google.firebase:firebase-firestore:23.0.0'
+    implementation 'com.google.firebase:firebase-auth'
 
 }

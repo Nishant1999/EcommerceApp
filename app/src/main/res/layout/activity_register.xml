@@ -1,87 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/register"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="12dp"
     tools:context=".auth.RegisterActivity">
 
     <ImageView
-        android:id="@+id/activity_register_app_logo_iv"
-        android:layout_width="300dp"
-        android:layout_height="100dp"
-        android:src="@drawable/app_logo"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="200dp"
-        />
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:src="@drawable/logo" />
 
     <EditText
         android:id="@+id/activity_register_username_et"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/activity_register_app_logo_iv"
-        android:background="@drawable/input_design"
-        android:padding="16dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:hint="@string/name"
-        android:inputType="text"
-        android:textColor="@color/colorPrimaryDark"
-        android:textColorHint="@color/colorPrimaryDark"
-        android:textSize="16sp"
-        />
+        android:layout_marginTop="15dp"
+        android:background="@drawable/edit_text_background"
+        android:hint="@string/username"
+        android:padding="10dp" />
 
     <EditText
-        android:id="@+id/activity_register_phone_number_et"
+        android:id="@+id/activity_register_name_et"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/activity_register_username_et"
-        android:background="@drawable/input_design"
-        android:padding="16dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:hint="@string/phone_number"
-        android:inputType="phone"
-        android:textColor="@color/colorPrimaryDark"
-        android:textColorHint="@color/colorPrimaryDark"
-        android:textSize="16sp"
-        android:layout_marginTop="6dp"
-        />
+        android:layout_marginTop="15dp"
+        android:background="@drawable/edit_text_background"
+        android:hint="@string/name"
+        android:padding="10dp" />
 
+    <EditText
+        android:id="@+id/activity_register_email_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/edit_text_background"
+        android:hint="@string/email"
+        android:padding="10dp" />
 
     <EditText
         android:id="@+id/activity_register_password_et"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/activity_register_phone_number_et"
-        android:background="@drawable/input_design"
-        android:padding="16dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginTop="6dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/edit_text_background"
         android:hint="@string/password"
-        android:inputType="textPassword"
-        android:textColor="@color/colorPrimaryDark"
-        android:textColorHint="@color/colorPrimaryDark"
-        android:textSize="16sp"
-        />
-
+        android:padding="10dp" />
 
     <Button
         android:id="@+id/activity_register_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/activity_register_password_et"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:background="@drawable/buttons"
+        android:layout_marginTop="15sp"
+        android:background="@drawable/button_background"
         android:padding="10dp"
-        android:textAllCaps="false"
-        android:textSize="16sp"
-        android:text="@string/create_account"
-        android:textColor="@android:color/white"
-        />
+        android:text="@string/register" />
 
-</RelativeLayout>
+    <TextView
+        android:id="@+id/activity_register_login_user_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="@string/already_a_user_login" />
+
+</LinearLayout>
