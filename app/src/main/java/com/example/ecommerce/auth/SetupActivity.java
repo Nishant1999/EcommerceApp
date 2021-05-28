@@ -56,13 +56,15 @@ public class SetupActivity extends AppCompatActivity {
         registerBN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(SetupActivity.this,RegisterActivity.class));
+                startActivity(new Intent(SetupActivity.this,RegisterActivity.class)
+                .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP));
             }
         });
         loginBN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(SetupActivity.this,LoginActivity.class));
+                startActivity(new Intent(SetupActivity.this,LoginActivity.class)
+                .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP));
             }
         });
     }
