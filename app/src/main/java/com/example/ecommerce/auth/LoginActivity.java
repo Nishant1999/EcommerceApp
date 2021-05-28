@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.ecommerce.MainActivity;
@@ -24,6 +25,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private EditText userEmailET,userPasswordET;
     private Button loginBN;
+    private TextView registerUserTV;
     private ProgressDialog progressDialog;
     private FirebaseAuth firebaseAuth;
 
@@ -32,21 +34,29 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        //initialize();
-        //setListener();
+        initialize();
+        setListener();
     }
 
-/*    private void initialize(){
+    private void initialize(){
 
         userEmailET = findViewById(R.id.activity_login_email_address_et);
         userPasswordET = findViewById(R.id.activity_login_password_et);
         loginBN = findViewById(R.id.activity_login_btn);
+        registerUserTV=findViewById(R.id.activity_login_register_user_tv);
         progressDialog = new ProgressDialog(this);
         firebaseAuth = FirebaseAuth.getInstance();
-    }*/
+    }
 
     private void setListener(){
 
+        registerUserTV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LoginActivity.this,RegisterActivity.class)
+                        .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP));
+            }
+        });
         loginBN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -83,7 +93,8 @@ public class LoginActivity extends AppCompatActivity {
             public void onComplete(Task<AuthResult> task) {
                 if(task.isSuccessful()){
                     progressDialog.dismiss();
-                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                    startActivity(new Intent(LoginActivity.this, MainActivity.class)
+                    .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP));
                     finish();
                 }
                 else{

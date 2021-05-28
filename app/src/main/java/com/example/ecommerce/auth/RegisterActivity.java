@@ -11,6 +11,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.ecommerce.MainActivity;
@@ -28,6 +29,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     private EditText userNameET,nameET,userEmailET,userPasswordET;
     private Button createAccountBN;
+    private TextView loginUserTV;
     private ProgressDialog progressDialog;
     private FirebaseAuth firebaseAuth;
     private FirebaseFirestore firebaseFirestore;
@@ -49,6 +51,7 @@ public class RegisterActivity extends AppCompatActivity {
         userEmailET = findViewById(R.id.activity_register_email_et);
         userPasswordET = findViewById(R.id.activity_register_password_et);
         createAccountBN = findViewById(R.id.activity_register_btn);
+        loginUserTV=findViewById(R.id.activity_register_login_user_tv);
         progressDialog = new ProgressDialog(this);
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseFirestore = FirebaseFirestore.getInstance();
@@ -61,6 +64,13 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 validateField();
+            }
+        });
+
+        loginUserTV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(RegisterActivity.this,LoginActivity.class));
             }
         });
     }
@@ -82,6 +92,9 @@ public class RegisterActivity extends AppCompatActivity {
         }
         else if(TextUtils.isEmpty(password)){
             userPasswordET.setError("Please Enter Password");
+        }
+        else if(password.length()<6){
+            userPasswordET.setError("Password Too Short");
         }
         else{
             progressDialog.setTitle("Create Account");
@@ -105,7 +118,7 @@ public class RegisterActivity extends AppCompatActivity {
                     saveUserDetailsFirestore(user);
                 }
                 else{
-                    Toast.makeText(RegisterActivity.this, "Error in Creating Account    ", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterActivity.this, "Error in Creating Account", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -119,7 +132,8 @@ public class RegisterActivity extends AppCompatActivity {
                     @Override
                     public void onSuccess(Void unused) {
                         progressDialog.dismiss();
-                        startActivity(new Intent(RegisterActivity.this, MainActivity.class));
+                        startActivity(new Intent(RegisterActivity.this, MainActivity.class)
+                        .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP));
                         finish();
                     }
                 }).addOnFailureListener(new OnFailureListener() {

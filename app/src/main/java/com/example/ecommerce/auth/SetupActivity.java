@@ -69,6 +69,15 @@ public class SetupActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if(FirebaseAuth.getInstance().getCurrentUser()!=null){
+            startActivity(new Intent(SetupActivity.this,MainActivity.class));
+            finish();
+        }
+    }
+
     private class MyAnimationListener implements Animation.AnimationListener{
 
         @Override
